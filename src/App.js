@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import { RouterProvider} from 'react-router-dom';
+import router from './router';
+import NavBar from './components/NavBar';
+import "./App.css"
+
+
+
+const App = () => {
+  // const addToCart = (product) => {
+  //   const updatedCart = [...cart, { product, quantity: 1 }];
+  //   setCart(updatedCart);
+  // };
+
+  // const updateQuantity = (productId, newQuantity) => {
+  //   const updatedCart = cart.map((item) =>
+  //     item.product.id === productId ? { ...item, quantity: newQuantity } : item
+  //   );
+  //   setCart(updatedCart);
+  // };
+  // const removeFromCart = (productId) => {
+  //   const updatedCart = cart.filter((item) => item.product.id !== productId);
+  //   setCart(updatedCart);
+  // };
+
+  // const calculateTotal = () =>
+  // cart.reduce((total, item) => total + item.product.price * item.quantity, 
+  // 0);
+
+  // const checkout = () => {
+ 
+  //   alert(`Order Summary:\nTotal: $${calculateTotal().toFixed(2)}`);
+  
+  //   setCart([]);
+  // };
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <>
+      <RouterProvider router={router} />
+      </>
   );
-}
+};
 
 export default App;
