@@ -3,6 +3,8 @@ import NavBar from './NavBar';
 import { useLocation } from 'react-router-dom';
 import AddToCartButton from './AddToCartButton';
 import '../App.css'
+
+
 const ProductDetails = () => {
   const {state}=useLocation()
   if (!state?.data) {

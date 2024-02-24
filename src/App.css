@@ -20,6 +20,15 @@ body {
   text-align: center;
 }
 
+.productcon{
+  margin: 5px 15px 10px 50px;
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr;
+  grid-template-rows:auto;
+  text-align: center;
+   grid-gap: 20px;
+}
+
 .shopping-cart {
   text-align: center;
 }
@@ -104,8 +113,19 @@ body {
 }
 
 .images{
-  width: 350px;
-  height: 250px;
- 
+  width: 315px;
+  height: 185px;
 }
+
+.each-slide-effect > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 400px;
+  object-fit: cover;
+}
+
 
