@@ -9,12 +9,14 @@ import Cloth from "../images/Cloth.jpg";
 import Shoe from "../images/Shoe.jpg";
 import Atomic from "../images/Atomic.jpg";
 import NavBar from "./NavBar";
-
 import "../App.css";
 // import Catagories from "./Catagories";
-import { Slide } from 'react-slideshow-image';
-import 'react-slideshow-image/dist/styles.css';
-import welcome from '../images/Welcome.jpg';
+import { Slide } from "react-slideshow-image";
+import "react-slideshow-image/dist/styles.css";
+import welcome from "../images/Welcome.jpg";
+import iphone15 from "../images/Iphone15.jpg";
+import Samsung24 from "../images/Samsung24.jpg";
+import Nike from "../images/Nike.png";
 
 const ProductList = () => {
   const products = [
@@ -59,62 +61,118 @@ const ProductList = () => {
       name: "Atomic Habit",
       description:
         "Atomic Habits by James Clear is a comprehensive, practical guide on how to change your habits and get 1% better every day. Using a framework called the Four Laws of Behavior Change, Atomic Habits teaches readers a simple set of rules for creating good habits and breaking bad ones.",
-      price: 123,
+      price: 55,
       image: Atomic,
       catagoty: "Book",
     },
+    {
+      id: 6,
+      name: "Iphone-15",
+      description:
+        "iPhone 14 and iPhone 14 Plus introduce a new standard for photo and video capture with a new 12MP Main camera featuring a larger sensor and larger pixels, a new front TrueDepth camera, the Ultra Wide camera to capture more of a scene, and Photonic Engine for a giant leap in low-light performance.",
+      price: 999.9,
+      image: iphone15,
+      catagoty: "Electronics",
+    },
   ];
 
+  const Latestproduct = [
+    {
+      id: 1,
+      name: "Iphone-15",
+      description:
+        "iPhone 14 and iPhone 14 Plus introduce a new standard for photo and video capture with a new 12MP Main camera featuring a larger sensor and larger pixels, a new front TrueDepth camera, the Ultra Wide camera to capture more of a scene, and Photonic Engine for a giant leap in low-light performance.",
+      price: 999.99,
+      image: iphone15,
+      catagoty: "Electronics",
+    },
+    {
+      id: 2,
+      name: "Samsung24",
+      description:
+        "The Samsung Galaxy S24 is a series of high-end Android-based smartphones designed, developed, manufactured, and marketed by Samsung Electronics as part of its flagship Galaxy S series. They collectively serve as the successor to the Samsung Galaxy S23 series.[5][6] The phones were announced on January 17, 2024, at the 2024 Galaxy Unpacked, alongside Galaxy AI, in San Jose, California. The Samsung Galaxy S24, 24+, and 24 Ultra were released on January 31, 2024",
+      price: 799.99,
+      image: Samsung24,
+      catagoty: "Electronics",
+    },
+    {
+      id: 3,
+      name: "Nike",
+      description: "Nike's New Joyride Sneakers Made Me Actually Like Running",
+      price: 180,
+      image: Nike,
+      catagoty: "Shoe",
+    },
+  ];
   const categories = [
     { name: "Electronics", value: "Electronics", image: Electronics },
     { name: "Cloth", value: "cloth", image: Cloth },
     { name: "Shoe", value: "Shoe", image: Shoe },
-    
   ];
 
-const WelcomeImage=
-[welcome, Electronics, Cloth, Shoe];
+  const WelcomeImage = [welcome, Electronics, Cloth, Shoe];
 
   return (
     <div>
       <NavBar />
       <Slide>
-  <div className="each-slide-effect">
-    <div style={{ 'backgroundImage': `url(${WelcomeImage[0]})` }}>
-      
-    </div>
-  </div>
-  <div className="each-slide-effect">
-    <div style={{ 'backgroundImage': `url(${WelcomeImage[1]})` }}>
-    
-    </div>
-  </div>
-  <div className="each-slide-effect">
-    <div style={{ 'backgroundImage': `url(${WelcomeImage[2]})` }}>
-    </div>
-  </div>
-</Slide>
-
-
+        <div className="each-slide-effect">
+          <div style={{ backgroundImage: `url(${WelcomeImage[0]})` }}></div>
+        </div>
+        <div className="each-slide-effect">
+          <div style={{ backgroundImage: `url(${WelcomeImage[1]})` }}></div>
+        </div>
+        <div className="each-slide-effect">
+          <div style={{ backgroundImage: `url(${WelcomeImage[2]})` }}></div>
+        </div>
+      </Slide>
 
       <h1 className="p-list">Catagories</h1>
       <Link to="/Catagories">
-        <button style={{width:"85px", height:'22px', }}>Catagories</button>
+        <button
+          style={{
+            width: "85px",
+            height: "25px",
+            marginLeft: "50%",
+            top: "10px",
+            marginBottom: "10px",
+          }}
+        >
+          Products
+        </button>
       </Link>
       <div className="productcon">
-        {categories.map((category, index) => (
-          <NavLink to={`/categories/${category.value}`} key={index}>
-            <div>
-              <img
-                className="images"
-                src={category.image}
-                alt={category.name}
-              />
-              <p>{category.name}</p>
-            </div>
-          </NavLink>
+        {categories.map((category) => (
+          <div>
+            <img className="images" src={category.image} alt={category.name} />
+            <p>{category.name}</p>
+          </div>
         ))}
       </div>
+      <h2 className="p-list">Latest Products</h2>
+      <Link to="/Catagories">
+        <button
+          style={{
+            width: "85px",
+            height: "25px",
+            marginLeft: "50%",
+            top: "10px",
+            marginBottom: "10px",
+          }}
+        >
+          Products
+        </button>
+      </Link>
+      <div className="productcon">
+        {Latestproduct.map((latest) => (
+          <div className="product-list">
+            <img className="images" src={latest.image} alt={latest.name} />
+            <p>{latest.name}</p>
+            <p>${latest.price}</p>
+          </div>
+        ))}
+      </div>
+
       <h2 className="p-list">Our Products</h2>
       <div className="Products">
         <div className="productcon">

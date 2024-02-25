@@ -124,7 +124,9 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 400px;
+  height: 500px;
+  text-align: center;
+  width:100%;
   object-fit: cover;
 }
 
