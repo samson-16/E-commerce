@@ -13,10 +13,10 @@ import Catagories from './components/Catagories';
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route>
-        <Route path="/" element={<ProductList />}></Route>
+        <Route path="/" element={<ProductList />} />
         <Route path="/products/:productId" element={<ProductDetails/>} />
         <Route path="/cart" element={<ShoppingCart />} />
-        <Route path="/Catagories" element={Catagories} />
+        <Route path="/Catagories" element={<Catagories />} />
         <Route path="*" element={<NotFound/>} />
       </Route>
     )

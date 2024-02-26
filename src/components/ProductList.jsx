@@ -177,7 +177,7 @@ const ProductList = () => {
       <div className="Products">
         <div className="productcon">
           {products.map((product) => (
-            <NavLink
+            <NavLink style={{textDecoration:'none'}}
               to={`/products/${product.id}`}
               key={product.id}
               state={{ data: product }}

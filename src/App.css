@@ -27,7 +27,16 @@ body {
   grid-template-rows:auto;
   text-align: center;
    grid-gap: 20px;
+   text-decoration: none
 }
+.product-list {
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-list:hover {
+  transform: scale(1.05);
+}
+
 
 .shopping-cart {
   text-align: center;
@@ -75,6 +84,10 @@ body {
   border: 2px outset blue;
   border-left: 6px solid blue;
 }
+.product-list p {
+  text-decoration: none;
+}
+
 
 
 .active-link {

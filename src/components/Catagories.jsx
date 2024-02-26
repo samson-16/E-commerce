@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import iphone from "../images/iphone.jpg";
 import Samsung1 from "../images/Samsung-S23.avif";
 import Samsung2 from "../images/samsung-a21s.jpg";
@@ -11,20 +11,24 @@ import Atomic from "../images/Atomic.jpg";
 import NavBar from "./NavBar";
 import "../App.css";
 import Book from "../images/Books.jpg";
-// import Catagories from "./Catagories";
 import 'react-slideshow-image/dist/styles.css';
 import iphone15 from "../images/Iphone15.jpg";
 import Samsung24 from '../images/Samsung24.jpg';
 import Nike from "../images/Nike.png";
 import Nike1 from "../images/Nike1.jpg";
-
-
+import Medical from "../images/Medical.jpg";
+import Beauty from '../images/Beauty.jpg';
+import Iphone13 from '../images/1.png';
+import Canon from '../images/3.png';
+import Jacket from '../images/4.png';
 const Catagories = () => {
   const categories = [
     { name: 'Electronics', value: 'Electronics', image: Electronics },
     { name: 'Cloth', value: 'cloth', image: Cloth },
     { name: 'Shoe', value: 'Shoe', image: Shoe },
     { name: 'Book', value: 'Book', image: Book },
+    { name: 'Medical', value: 'Medical', image: Medical },
+    { name: 'Beauty', value: 'Beauty', image: Beauty },
   ];
   const products = [
     {
@@ -107,31 +111,59 @@ const Catagories = () => {
       image: Nike1,
       catagoty: "Shoe",
     },
+    {
+    id: 10,
+    name: "Iphone-13",
+      description: 
+     "The iPhone 13 and iPhone 13 Mini (stylized as iPhone 13 mini) are smartphones designed, developed, marketed, and sold by Apple Inc. They are the fifteenth generation of iPhones (succeeding the iPhone 12 and iPhone 12 Mini respectively). They were unveiled at an Apple Event in Apple Park in Cupertino, California, on September 14, 2021, alongside the higher-priced iPhone 13 Pro and iPhone 13 Pro Max flagships",
+    price: 599.99,
+    image: Iphone13,
+    catagoty: "Electronics",
+  },
+  {
+    id: 11,
+    name: "Canon EO5 camera",
+      description: 
+     "Canon EOS (Electro-Optical System) is an autofocus single-lens reflex camera (SLR) and mirrorless camera series produced by Canon Inc. Introduced in 1987 with the Canon EOS 650, all EOS cameras used 35 mm film until October 1996 when the EOS IX was released using the new and short-lived APS film. In 2000, the D30 was announced, as the first digital SLR designed and produced entirely by Canon. Since 2005, all newly announced EOS cameras have used digital image sensors rather than film. The EOS line is still in production as Canon's current digital SLR (DSLR) range, and, with the 2012 introduction of the Canon EOS M, Canon's mirrorless interchangeable-lens camera (MILC) system. In 2018 the system was further extended with the introduction of the EOS R camera, Canon's first full frame mirrorless interchangeable lens system.",
+    price: 230,
+    image: Canon,
+    catagoty: "Electronics",
+  },
+  {
+    id: 12,
+    name: "waxed suede jacket",
+      description: 
+      "Canon EOS (Electro-Optical System) is an autofocus single-lens reflex camera (SLR) and mirrorless camera series produced by Canon Inc. Introduced in 1987 with the Canon EOS 650, all EOS cameras used 35 mm film until October 1996 when the EOS IX was released using the new and short-lived APS film. In 2000, the D30 was announced, as the first digital SLR designed and produced entirely by Canon. Since 2005, all newly announced EOS cameras have used digital image sensors rather than film. The EOS line is still in production as Canon's current digital SLR (DSLR) range, and, with the 2012 introduction of the Canon EOS M, Canon's mirrorless interchangeable-lens camera (MILC) system. In 2018 the system was further extended with the introduction of the EOS R camera, Canon's first full frame mirrorless interchangeable lens system.",
+    price: 68,
+    image: Jacket,
+    catagoty: "Cloth",
+  },
+  
+
 
   ];
 
   return (
     <>
       <NavBar />
-      <div className='productcon'>
-        {categories.map((category, index) => (
-          <Link to={`/categories/${category.value}`} key={index}>
-            <div>
-              <img className='category-image' src={category.image} alt={category.name} />
-              <p>{category.name}</p>
-            </div>
-          </Link>
+    
+      <div className="productcon">
+        {categories.map((category) => (
+           <div className="product-list" key={category.value}> 
+              <img className="images" src={category.image} alt={category.name} /> 
+              <p>{category.name}</p> 
+           </div>
         ))}
       </div>
-      <h1>All Products</h1>
+   
+      <h1 style={{textAlign: "center"}}>All Products</h1>
       <div className="Products">
         <div className="productcon">
           {products.map((product) => (
-            <NavLink
+            <NavLink style={{textDecoration: 'none'}}
               to={`/products/${product.id}`}
               key={product.id}
-              state={{ data: product }}
-            >
+              state={{ data: product }}>
               <div className="product-list">
                 <img
                   className="images"
