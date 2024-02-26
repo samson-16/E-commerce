@@ -45,15 +45,21 @@ const ShoppingCart = () => {
 
       {state?.data ? (
         <div className='shopping-cart-item'>
-          <p>{state.data.name}</p>
-          <p className='shop-description'>Description: {state.data.description}</p>
+          <p style={{textAlign:"center"}}><b>{state.data.name}</b></p>
+          <div className="shop-con">
+          <img src={state.data.image} alt={state.data.name} style={{width:'300px', height:'300px'}}/>
+         <div className='shop-info'>
+         <p className='shop-description'>{state.data.description}</p>
           <p>Price: ${state.data.price}</p>
-          <p>Quantity: {cart.find((item) => item.product.id === state.data.id)?.quantity}</p>
-          <button onClick={increaseQuantity} className='btn'>+</button>
-          <button onClick={decreaseQuantity} className='btn'>-</button>
+          <p><b>Quantity: {cart.find((item) => item.product.id === state.data.id)?.quantity}</b></p>
+          <button onClick={increaseQuantity} className='btnn'>+</button>
+          <button onClick={decreaseQuantity} className='btnn'>-</button>
           <button onClick={removeFromCart} className='btn'>Remove</button>
           <p>Total: ${calculateTotal()}</p>
           <button onClick={checkout} className='btn'>Checkout</button>
+         </div>
+          </div>
+
         </div>
       ) : (
         <div>Product not found</div>

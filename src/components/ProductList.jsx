@@ -10,13 +10,15 @@ import Shoe from "../images/Shoe.jpg";
 import Atomic from "../images/Atomic.jpg";
 import NavBar from "./NavBar";
 import "../App.css";
-// import Catagories from "./Catagories";
+
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import welcome from "../images/Welcome.jpg";
 import iphone15 from "../images/Iphone15.jpg";
 import Samsung24 from "../images/Samsung24.jpg";
 import Nike from "../images/Nike.png";
+import Iphone13 from '../images/1.png';
+import MacBook from '../images/3.png';
 
 const ProductList = () => {
   const products = [
@@ -110,7 +112,7 @@ const ProductList = () => {
     { name: "Shoe", value: "Shoe", image: Shoe },
   ];
 
-  const WelcomeImage = [welcome, Electronics, Cloth, Shoe];
+  const WelcomeImage = [welcome, Electronics,Iphone13, MacBook];
 
   return (
     <div>
@@ -125,18 +127,15 @@ const ProductList = () => {
         <div className="each-slide-effect">
           <div style={{ backgroundImage: `url(${WelcomeImage[2]})` }}></div>
         </div>
+        <div className="each-slide-effect">
+          <div style={{ backgroundImage: `url(${WelcomeImage[3]})` }}></div>
+        </div>
       </Slide>
 
       <h1 className="p-list">Catagories</h1>
       <Link to="/Catagories">
         <button
-          style={{
-            width: "85px",
-            height: "25px",
-            marginLeft: "50%",
-            top: "10px",
-            marginBottom: "10px",
-          }}
+       className="productbtn"
         >
           Products
         </button>
@@ -152,13 +151,7 @@ const ProductList = () => {
       <h2 className="p-list">Latest Products</h2>
       <Link to="/Catagories">
         <button
-          style={{
-            width: "85px",
-            height: "25px",
-            marginLeft: "50%",
-            top: "10px",
-            marginBottom: "10px",
-          }}
+       className="productbtn"
         >
           Products
         </button>
